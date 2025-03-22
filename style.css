@@ -1,0 +1,83 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+header {
+    background-color: #007BFF;  /* Blue Background */
+    color: white;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+/* Login Button on Top Right */
+.login-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Content Section */
+section {
+    text-align: center;
+    margin: 30px;
+}
+
+/* Ad Image - Reduced Size (50% of original) */
+#ad-image {
+    width: 50%;  /* Adjust the image size to half */
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Price Info Text */
+.price-info {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Buy Now Button - Make it 2x bigger */
+#buy-now {
+    font-size: 32px;  /* 2x bigger size */
+    padding: 30px 64px;  /* Larger padding */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#buy-now:hover {
+    background-color: #45a049;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

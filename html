@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>Epic Central</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .ad-container {
+            margin-top: 30px;
+        }
+
+        .ad-container img {
+            width: 50%; /* Adjust the ad size to half */
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .buy-button:hover {
+            background-color: darkblue;
+        }
+
+        .g-signin2 {
+            margin-top: 20px;
+        }
+
+        #signOutButton {
+            display: none; /* Initially hide the sign-out button */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Title -->
+    <header>
+        <h1>Welcome to Epic Central!</h1>
+        <p>Join our crypto community of 400+ members.</p>
+    </header>
+
+    <!-- Ad Section -->
+    <div class="ad-container">
+        <img src="https://i.postimg.cc/NjCTfwc6/ABED36-DB-6-F9-D-4351-8-F9-E-04-CEC146-DFAC.jpg" alt="Epic Central Ad">
+        <h3>20 QJ = 1$</h3>
+        <button class="buy-button">Buy Now</button>
+    </div>
+
+    <!-- Google Sign-In Button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <!-- Sign-Out Button (Initially hidden) -->
+    <div id="signOutButton">
+        <button onclick="signOut();">Sign out</button>
+    </div>
+
+    <script>
+        // Function called after successful Google Sign-In
+        function onSignIn(googleUser) {
+            // Get user profile info
+            var profile = googleUser.getBasicProfile();
+            console.log("Name: " + profile.getName());
+            console.log("Email: " + profile.getEmail());
+
+            // Display the sign-out button after user signs in
+            document.getElementById("signOutButton").style.display = "block";
+
+            // Optionally, you can redirect or show user details on the page
+            // Example: window.location.href = "dashboard.html"; // Redirect to another page
+        }
+
+        // Function to sign out the user
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+                // Hide the sign-out button and show the sign-in button again
+                document.getElementById("signOutButton").style.display = "none";
+                // Optional: Redirect user or clear user data from the page
+                // Example: window.location.href = "index.html"; // Redirect to home page
+            });
+        }
+    </script>
+
+</body>
+</html>
